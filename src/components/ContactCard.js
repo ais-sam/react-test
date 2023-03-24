@@ -22,16 +22,18 @@ const ContactCard = ({ id,isFavoutites, name, phone, email }) => {
           </Card.Text>
         </Card.Body>
 
-        {!isFavoutites && 
+        
         <Card.Footer className='d-flex justify-content-end'>
-        <Link to="edit" state={id} className="text-decoration-none">
+        <Link to="/edit" state={id} className="text-decoration-none">
           <Button variant="outline-primary" className="me-2">
             Edit
           </Button>
         </Link>
+        {!isFavoutites && 
         <Button variant="outline-success" onClick={addToFavourites}>Favourite</Button>
+      }
         </Card.Footer>
-        }
+        
       </Card>
   )
 }
